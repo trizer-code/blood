@@ -87,7 +87,7 @@ python app.py
 Open in Browser
 Go to:
 
-http://127.0.0.1:5000/
+https://github.com/trizer-code/blood/blob/main/index.html
 
 📌 Future Improvements
 
