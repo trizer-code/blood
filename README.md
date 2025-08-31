@@ -87,8 +87,7 @@ python app.py
 Open in Browser
 Go to:
 
-https://1drv.ms/u/c/a454064e7a90bb45/Ea322vSfDilBq2hUJzX9m_EB1q_LgNv2LqBbVd8zxKEg4A?e=7ot1Ig
-
+http://127.0.0.1:5500/index.html
 📌 Future Improvements
 
 Admin dashboard to manage users.
