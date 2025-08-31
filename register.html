@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor Registration - Kenya Blood Bank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>🩸 Register as a Donor</h2>
+    <form id="donorRegisterForm">
+      <label>Full Name:</label>
+      <input type="text" name="fullName" placeholder="Enter your full name" required>
+
+      <label>Email:</label>
+      <input type="email" name="email" placeholder="Enter your email" required>
+
+      <label>Phone:</label>
+      <input type="tel" name="phone" placeholder="e.g. +254700000000" required>
+
+      <label>Blood Type:</label>
+      <select name="bloodType" required>
+        <option value="">-- Select --</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+
+      <label>County of Residence:</label>
+      <input type="text" name="county" placeholder="e.g. Nairobi" required>
+
+      <label>Nationality:</label>
+      <input type="text" name="nationality" placeholder="e.g. Kenyan" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" placeholder="Create a password" required minlength="6">
+
+      <button type="submit">Register</button>
+      <p class="switch-form">Already registered? <a href="login.html">Login here</a></p>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

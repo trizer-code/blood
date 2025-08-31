@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Dashboard - Kenya Blood Bank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1 class="hero">Welcome Hospital!</h1>
+
+    <div class="dashboard">
+      <div class="card">
+        <h3>🩸 Request Blood</h3>
+        <button id="request-blood-btn">Request Now</button>
+      </div>
+
+      <div class="card">
+        <h3>🚨 Emergency Request</h3>
+        <button id="emergency-request-btn">Submit Emergency</button>
+      </div>
+      <div class="card">
+  <h3>🔍 Find Donors</h3>
+  <form id="donorSearchForm">
+    <label>Blood Type:</label>
+    <select name="bloodType" required>
+      <option value="">-- Select --</option>
+      <option value="A+">A+</option>
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B-">B-</option>
+      <option value="AB+">AB+</option>
+      <option value="AB-">AB-</option>
+      <option value="O+">O+</option>
+      <option value="O-">O-</option>
+    </select>
+
+    <label>County:</label>
+    <input type="text" name="county" placeholder="e.g. Nairobi" required>
+
+    <button type="submit">Search</button>
+  </form>
+
+  <div id="donorResults"></div>
+</div>
+
+
+      <div class="card">
+        <h3>📍 Donor Availability</h3>
+        <button id="check-donors-btn">Check Donors</button>
+      </div>
+    </div>
+
+    <button id="hospital-logout-btn" class="btn">🚪 Logout</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
