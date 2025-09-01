@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donor Registration - Kenya Blood Bank</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="form-container">
-    <h2>🩸 Register as a Donor</h2>
+    <h2 style="color: red;">🩸 Register as a Donor</h2>
     <form id="donorRegisterForm">
-      <label>Full Name:</label>
-      <input type="text" name="fullName" placeholder="Enter your full name" required>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
 
-      <label>Email:</label>
-      <input type="email" name="email" placeholder="Enter your email" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
 
-      <label>Phone:</label>
-      <input type="tel" name="phone" placeholder="e.g. +254700000000" required>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. +254700000000" required />
 
-      <label>Blood Type:</label>
-      <select name="bloodType" required>
+      <label for="bloodType">Blood Type:</label>
+      <select id="bloodType" name="bloodType" required>
         <option value="">-- Select --</option>
         <option value="A+">A+</option>
         <option value="A-">A-</option>
@@ -32,17 +32,21 @@
         <option value="O-">O-</option>
       </select>
 
-      <label>County of Residence:</label>
-      <input type="text" name="county" placeholder="e.g. Nairobi" required>
+      <label for="county">County of Residence:</label>
+      <input type="text" id="county" name="county" placeholder="e.g. Nairobi" required />
 
-      <label>Nationality:</label>
-      <input type="text" name="nationality" placeholder="e.g. Kenyan" required>
+      <label for="nationality">Nationality:</label>
+      <input type="text" id="nationality" name="nationality" placeholder="e.g. Kenyan" required />
 
-      <label>Password:</label>
-      <input type="password" name="password" placeholder="Create a password" required minlength="6">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6" />
 
       <button type="submit">Register</button>
-      <p class="switch-form">Already registered? <a href="login.html">Login here</a></p>
+
+      <p class="switch-form">
+        Already registered?
+        <a href="login.html">Login here</a>
+      </p>
     </form>
   </div>
   <script src="script.js"></script>

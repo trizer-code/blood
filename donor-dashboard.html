@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="form-container">
-    <h1 class="hero">Welcome Back!</h1>
+    <h1 class="hero">Welcome Back, <span id="donor-name">Donor</span>!</h1>
 
     <div class="dashboard">
       <div class="card">
@@ -29,6 +29,51 @@
 
     <button id="logout-btn" class="btn">🚪 Logout</button>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Get donor name/email from localStorage
+      const donorName = localStorage.getItem("donorName");
+      const donorEmail = localStorage.getItem("donorEmail");
+
+      if (!donorName || !donorEmail) {
+        alert("Please log in first.");
+        window.location.href = "login.html";
+        return;
+      }
+
+      document.getElementById("donor-name").textContent = donorName;
+
+      // Fetch donation count (backend placeholder for now)
+      fetch("http://127.0.0.1:5000/donor/donations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: donorEmail })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.count !== undefined) {
+            document.getElementById("donation-count").textContent = data.count;
+          }
+        })
+        .catch(error => {
+          console.error("Error fetching donation count:", error);
+        });
+
+      // Button actions
+      document.getElementById("logout-btn").addEventListener("click", () => {
+        localStorage.clear();
+        window.location.href = "login.html";
+      });
+
+      document.getElementById("find-centre-btn").addEventListener("click", () => {
+        alert("🗺️ Feature coming soon: Locate donation centres near you.");
+      });
+
+      document.getElementById("check-availability-btn").addEventListener("click", () => {
+        alert("🩸 Feature coming soon: See demand for your blood type.");
+      });
+    });
+  </script>
 </body>
 </html>

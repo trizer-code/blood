@@ -1,3 +1,4 @@
+
 // ====================================
 // BLOOD BANK FRONTEND SCRIPT
 // ====================================
@@ -247,6 +248,37 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => {
           console.error("Error:", err);
           alert("⚠️ Could not fetch donor data.");
+        });
+    });
+  }
+
+  // ----------------------------
+  // HOSPITAL: CHECK ALL DONORS
+  // ----------------------------
+  const checkDonorsBtn = document.getElementById("check-donors-btn");
+  if (checkDonorsBtn) {
+    checkDonorsBtn.addEventListener("click", () => {
+      fetch("http://127.0.0.1:5000/donors/all")
+        .then(res => res.json())
+        .then(donors => {
+          const resultsDiv = document.getElementById("donorResults");
+          if (donors.length > 0) {
+            resultsDiv.innerHTML = `
+              <h4>🧾 All Donors (${donors.length}):</h4>
+              <ul>
+                ${donors.map(d => `
+                  <li><strong>${d.fullName}</strong> 
+                  (${d.bloodType}, ${d.county}) - 📞 ${d.phone}</li>
+                `).join("")}
+              </ul>
+            `;
+          } else {
+            resultsDiv.innerHTML = "<p>😕 No donors found in the system.</p>";
+          }
+        })
+        .catch(err => {
+          console.error("Error:", err);
+          alert("⚠️ Unable to fetch all donors.");
         });
     });
   }
